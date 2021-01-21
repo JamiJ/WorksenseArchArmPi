@@ -1,0 +1,5 @@
+Arch Linux
+
+cd /home/alarm
+chmod +x ArchSetup.sh
+./ArchSetup.sh
