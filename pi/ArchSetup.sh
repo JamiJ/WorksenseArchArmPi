@@ -210,6 +210,19 @@ echo;sleep 5
 
 
 
+echo "$(tput setaf 3)Enable and start NTP services$(tput sgr 0)"
+sleep 2
+timedatectl set-ntp 0
+cp timesyncd.conf /etc/systemd/timesyncd.conf
+timedatectl set-ntp 1
+systemctl start cronie.service
+echo "$(tput setaf 2)NTP services have been enabled and started$(tput sgr 0)"
+
+
+
+echo;sleep 5
+
+
 echo "$(tput setaf 3)Creating a nettest crontab$(tput sgr 0)"
 sleep 1
 #Write out current crontab (crontab is empty so you will get a message "no crontab for alarm")
