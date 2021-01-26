@@ -9,4 +9,5 @@ xset s off
 xset -dpms
 xset s noblank
 
-#Start chromium
+#Start Midori
+DISPLAY =:0

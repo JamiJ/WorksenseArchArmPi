@@ -110,7 +110,7 @@ echo;sleep 5
 echo "$(tput setaf 3)Installing needed software$(tput sgr 0)"
 sleep 2
 #Download everything needed
-pacman --needed --noconfirm -S libtool sudo cronie xdotool unclutter fbset libdrm xorg-xinit xf86-video-fbturbo xorg-xrefresh xorg-server xf86-video-fbdev chromium base base-devel
+pacman --needed --noconfirm -S libtool sudo cronie xdotool unclutter fbset libdrm archlinux-keyring xorg-xinit xf86-video-fbturbo xorg-xrefresh xorg-server xf86-video-fbdev midori base base-devel
 echo "$(tput setaf 2)Software installed$(tput sgr 0)"
 
 
@@ -155,10 +155,10 @@ echo;sleep 5
 
 
 
-#Make chromium start on boot
+#Make Midori start on boot
 copylink=$(tail -qn 1 link)
-echo -e "\n\nexec chromium --window-size=$CMD --start-fullscreen --app="$copylink >> /home/alarm/.xinitrc
-echo "$(tput setaf 2)Chromium startup copied to .xinitrc$(tput sgr 0)"
+echo -e "\n\nexec midori -a "$copylink >> /home/alarm/.xinitrc
+echo "$(tput setaf 2)Midori startup copied to .xinitrc$(tput sgr 0)"
 
 
 
@@ -208,19 +208,6 @@ echo "$(tput setaf 2)Cronie services have been enabled and started$(tput sgr 0)"
 
 echo;sleep 5
 
-
-
-echo "$(tput setaf 3)Enable and start NTP services$(tput sgr 0)"
-sleep 2
-timedatectl set-ntp 0
-cp timesyncd.conf /etc/systemd/timesyncd.conf
-timedatectl set-ntp 1
-systemctl start cronie.service
-echo "$(tput setaf 2)NTP services have been enabled and started$(tput sgr 0)"
-
-
-
-echo;sleep 5
 
 
 echo "$(tput setaf 3)Creating a nettest crontab$(tput sgr 0)"
