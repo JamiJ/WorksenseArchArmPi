@@ -172,8 +172,8 @@ echo
 sleep 1
 #Extract root filesystem
 echo "$(tput setaf 3)extracting filesystem in$(tput sgr 0)"
-echo bsdtar -v -xpf /home/$USER/pi/ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root
-echo bsdtar -v -xpf /home/xubuntu/pi/ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root > /tmp/bsdtar12345
+sudo bsdtar -v -xpf /home/$USER/pi/ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root
+sudo bsdtar -v -xpf /home/xubuntu/pi/ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root > /tmp/bsdtar12345
 echo "$(tput setaf 1)3$(tput sgr 0)"
 sleep 1
 echo "$(tput setaf 3)2$(tput sgr 0)"
