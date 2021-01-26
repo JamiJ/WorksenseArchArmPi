@@ -87,7 +87,7 @@ echo n
 echo p
 echo 1
 echo
-echo +100M
+echo +2000M
 echo t
 echo c
 echo n
