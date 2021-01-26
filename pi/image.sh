@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Install everything needed (can be commented out)
-#sudo pacman --needed --noconfirm  -S figlet libarchive base base-devel dosfstools f2fs-tools
+sudo apt-get install -y figlet f2fs-tools bsdtar
 
 PURPLE="\e[35m"
 STOP="\e[0m"
