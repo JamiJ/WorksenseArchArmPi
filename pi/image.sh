@@ -228,6 +228,7 @@ sudo su root -c 'cp /home/xubuntu/pi/bp /mnt/root/home/alarm/.bash_profile'
 sudo su root -c 'cp /home/xubuntu/pi/nettest.sh /mnt/root/home/alarm/nettest.sh'
 sudo su root -c 'cp /home/xubuntu/pi/chromium_restart.sh /mnt/root/home/alarm/chromium_restart.sh'
 sudo su root -c 'cp /home/xubuntu/pi/xinitrc /mnt/root/home/alarm/.xinitrc'
+sudo su root -c 'cp /home/xubuntu/pi/timesyncd.conf /mnt/root/home/alarm/timesyncd.conf'
 echo "$(tput setaf 2)Scripts copied to pi$(tput sgr 0)"
 echo
 echo;sleep 1
