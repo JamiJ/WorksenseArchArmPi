@@ -76,7 +76,7 @@ else
         echo "$(tput setaf 2)USB stick not mounted$(tput sgr 0)"
 fi
 
-echo;sleep 1
+echo;sleep 5
 
 #Creates first and second partition
 (
@@ -98,12 +98,12 @@ echo
 echo w
 ) | sudo fdisk /dev/$SD
 
-sleep 1
+sleep 5
 
 echo "$(tput setaf 2)fdisk done$(tput sgr 0)"
 
 echo
-echo;sleep 1
+echo;sleep 5
 
 sudo rm -fr /mnt/boot
 sudo rm -fr /mnt/root
@@ -118,11 +118,13 @@ echo "$(tput setaf 2)first partition formated to vfat$(tput sgr 0)"
 
 echo
 
-sleep 1
+sleep 5
 
 echo
 #Second partition
 echo "$(tput setaf 3)formating second partition to f2fs$(tput sgr 0)"
+sudo umount /dev/$SD'p2'
+sleep 5
 sudo mkfs.f2fs -f /dev/$SD'p2'
 echo "$(tput setaf 2)second partition formated to f2fs$(tput sgr 0)"
 
@@ -142,7 +144,7 @@ sudo mkdir /mnt/root
 sudo mkdir /mnt/usb
 echo "$(tput setaf 2)directories created$(tput sgr 0)"
 echo
-echo ;sleep 1
+echo ;sleep 5
 #Mount partitions to directories
 echo "$(tput setaf 3)mounting partitions to directories$(tput sgr 0)"
 sudo mount /dev/$SD'p1' /mnt/boot
@@ -158,7 +160,7 @@ echo
 sudo rm -fr /mnt/boot/*
 sudo rm -fr /mnt/root/*
 
-sleep 2
+sleep 5
 #Download root filesystem
 if 	ls ArchLinuxARM-rpi-2-latest.tar.gz 1> /dev/null 2>&1; then
 	echo "$(tput setaf 2)filesystem already downloaded$(tput sgr 0)"
