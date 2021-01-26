@@ -2,7 +2,7 @@
 
 #Hide cursor
 unclutter -idle 1 -jitter 2 -root&
-
+loadkeys fi
 #No screensaver
 xset q
 xset s off

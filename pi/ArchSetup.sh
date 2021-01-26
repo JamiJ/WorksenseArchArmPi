@@ -61,14 +61,15 @@ echo;sleep 2
 
 
 
-echo "$(tput setaf 3)Set timezone to Finland$(tput sgr 0)"
+echo "$(tput setaf 3)Set timezone to Finland & set-ntp to 0$(tput sgr 0)"
 sleep 1
 timedatectl set-timezone Europe/Helsinki
-echo "$(tput setaf 2)Timezone set$(tput sgr 0)"
+timedatectl set-ntp 0
+echo "$(tput setaf 2)Timezone set & set-ntp 0$(tput sgr 0)"
 
 
 
-echo;sleep 2
+echo;sleep 4
 
 
 
@@ -122,6 +123,8 @@ echo;sleep 10
 echo "$(tput setaf 3)Copying conf files$(tput sgr 0)"
 sleep 1
 cp xorg.conf /usr/share/X11/xorg.conf.d/99-fbturbo.conf
+cp timesyncd.conf /etc/system/timesyncd.conf
+
 echo "$(tput setaf 2)Conf files copied$(tput sgr 0)"
 
 

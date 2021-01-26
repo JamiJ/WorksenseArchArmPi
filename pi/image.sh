@@ -164,7 +164,7 @@ if 	ls ArchLinuxARM-rpi-2-latest.tar.gz 1> /dev/null 2>&1; then
 	echo "$(tput setaf 2)filesystem already downloaded$(tput sgr 0)"
 else
     	echo "$(tput setaf 2)downloading filesystem$(tput sgr 0)"
-	sudo su root -c 'wget -P /home/linux/pi/ http://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz'
+	sudo su root -c 'wget -P /home/xubuntu/pi/ http://archlinuxarm.org/os/ArchLinuxARM-rpi-2-latest.tar.gz'
 fi
 
 echo
@@ -173,7 +173,7 @@ sleep 1
 #Extract root filesystem
 echo "$(tput setaf 3)extracting filesystem in$(tput sgr 0)"
 echo bsdtar -v -xpf /home/$USER/pi/ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root
-echo bsdtar -v -xpf /home/linux/pi/ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root > /tmp/bsdtar12345
+echo bsdtar -v -xpf /home/xubuntu/pi/ArchLinuxARM-rpi-2-latest.tar.gz -C /mnt/root > /tmp/bsdtar12345
 echo "$(tput setaf 1)3$(tput sgr 0)"
 sleep 1
 echo "$(tput setaf 3)2$(tput sgr 0)"
