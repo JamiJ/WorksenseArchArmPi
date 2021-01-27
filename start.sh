@@ -56,6 +56,15 @@ echo
 echo
 echo
 echo
+sleep 2
+echo "Set timezone Europe/Helsinki"
+sudo timedatectl set-timezone Europe/Helsinki
+sleep 1
+echo
+echo
+echo
+echo
+echo
 echo "Starting raspi-config in 15 seconds, please navigate and choose:"
 echo "1 System Options -> S5 Boot / Auto Login -> B4 Desktop Autologin"
 sleep 15
