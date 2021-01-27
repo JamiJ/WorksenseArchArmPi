@@ -10,12 +10,33 @@ sudo apt-get install -y xdotool unclutter sed
 echo
 echo
 echo
+echo
+echo
 echo "Downloading needed files from the server"
 sleep 1
 wget -O kiosk.service https://raw.githubusercontent.com/JamiJ/WorksenseArchArmPi/main/kiosk.service
 wget -O kiosk.sh https://raw.githubusercontent.com/JamiJ/WorksenseArchArmPi/main/kiosk.sh
 echo "Download completed!"
 sleep 2
+echo
+echo
+echo
+echo
+echo
+sleep 2
+echo "Creating a reboot crontab"
+sleep 1
+#Write out current crontab
+crontab -l > rebootcron
+#Echo new cron into cron file
+echo @midnight reboot >> rebootcron
+#Install new cron file
+crontab rebootcron
+rm rebootcron
+echo "Reboot crontab created"
+sleep 2
+echo
+echo
 echo
 echo
 echo
@@ -32,7 +53,10 @@ echo "Enable & Start completed!"
 sleep 2
 echo
 echo
-echo "Starting raspi-config in 5 seconds, please navigate and choose:"
+echo
+echo
+echo
+echo "Starting raspi-config in 15 seconds, please navigate and choose:"
 echo "1 System Options -> S5 Boot / Auto Login -> B4 Desktop Autologin"
-sleep 5
+sleep 15
 sudo raspi-config
